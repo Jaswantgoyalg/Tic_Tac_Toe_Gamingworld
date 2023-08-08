@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap');
+/* set margin and padding from top, right, bottom, and left: all zero */
+*{
+    margin: 0;
+    padding: 0;
+}
+/*different in margin & padding: padding andar se aur margin bahar se milti hai*/
+
+nav{
+    background-color: rgb(222 26 171);;
+    color: #262449;; /* Text color*/
+    height: 65px;   /*height of navbar: width*/
+    font-size: 27px;
+    display: flex;
+    align-items: center; /*up and down se center laana: align-items*/
+    padding: 0 12px; /* up & down zero pixel and 12px left & right*/
+    font-family: 'Roboto', sans-serif;    /*add import also in begining*/
+}
+
+nav ul{
+    list-style-type: none; /*removing any style or bullet points*/
+}
+
+.gameContainer{ 
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;    /*centering the div: from left & right*/
+    margin-top: 50px;      /* to clear the game: giving margin from up only*/
+}
+
+.container{
+    display: grid;   /*containers are the grids in the game*/
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);  /*to making it responsive: use repeat & vw sizing*/
+    font-family: 'Roboto', sans-serif;  
+    /*font-family will change in the container*/
+    position: relative;
+}
+
+.box{
+    border: 2px solid black;
+    font-size: 8vw;   /* setting the font size of .container div*/
+    cursor: pointer;  /*while hover, make it a cursor*/
+    display: flex;   /*flexbox: to create flexible and responsive page layouts
+    -> Provides a convenient way to distribute space among items in a container, align them and control their order*/
+    justify-content: center;
+    align-items: center;  /*make words into center*/
+}
+
+.box:hover{
+    /*while hover onto any box, make it some colourful*/
+    background-color: rgb(242, 234, 250);
+}
+
+.info {
+    font-size: 22px;
+}
+
+.gameInfo{
+    padding: 0 34px;   
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+.gameInfo h1{
+    font-size: 2.5rem;
+}
+
+/*.imgbox img{
+    display: none;    //if wants to hide the image permanently
+}
+*/
+
+.imgbox img{
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+/*border right ko zero (grid bnaate time extra borders aaye the remove karne ke liye), make the classes br-0, bl-0, bt-0, bb-0
+and add them into right places*/
+.br-0{   
+    border-right: 0;
+}
+
+.bl-0{
+    border-left: 0;
+}
+
+.bt-0{
+    border-top: 0;
+}
+
+.bb-0{
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0 23px;
+    padding: 1px 18px;
+    background: #f3e7f9;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Baloo Bhaina 2';
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.line{
+    background-color: black;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+}
+
+@media screen and (max-width: 950px)
+{
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .gameInfo h1{
+        font-size: 1.5rem;
+    }
+    .container { 
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
+
